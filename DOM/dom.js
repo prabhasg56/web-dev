@@ -73,20 +73,28 @@
 
 //QuerySelectorAll //
 
-let title = document.querySelectorAll('.title');
+// let title = document.querySelectorAll('.title');
 
-console.log(title);
-title[0].textContent = 'Hello';
+// console.log(title);
+// title[0].textContent = 'Hello';
 
-let odd = document.querySelectorAll('li:nth-child(odd)');
-let even = document.querySelectorAll('li:nth-child(even)');
+// let odd = document.querySelectorAll('li:nth-child(odd)');
+// let even = document.querySelectorAll('li:nth-child(even)');
 
-for(let i = 0; i<odd.length; i++){
-    odd[i].style.backgroundColor = '#f4f4f4';
-    even[i].style.backgroundColor = '#ccc';
+// for(let i = 0; i<odd.length; i++){
+//     odd[i].style.backgroundColor = '#f4f4f4';
+//     even[i].style.backgroundColor = '#ccc';
+// }
+
+// Make the 3 rd element in the list have green background color //
+
+let items = document.getElementsByClassName("list-group-item");
+
+items[2].style.backgroundColor = 'green';
+
+for(let i = 0; i<items.length; i++){
+    items[i].style.fontWeight = 'bold'
 }
-
-
 
 
 
