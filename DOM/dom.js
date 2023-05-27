@@ -104,17 +104,24 @@
 //// Add a new li element without the same class Name ////
 //// And try editing it with getelementsbyclassname and then by getelementbytagname ////
 
-let classItem = document.getElementsByClassName('list-group-item');
+// let classItem = document.getElementsByClassName('list-group-item');
 
-for(let i = 0; i<classItem.length; i++){
-    classItem[i].style.backgroundColor = 'yellow'; // all the list item's background color are yellow except last item which is not belongs to class 'list-group-item'
-}
+// for(let i = 0; i<classItem.length; i++){
+//     classItem[i].style.backgroundColor = 'yellow'; // all the list item's background color are yellow except last item which is not belongs to class 'list-group-item'
+// }
 
-let item = document.getElementsByTagName('li');
+// let item = document.getElementsByTagName('li');
 
-for(let i = 0; i<item.length; i++){
-    item[i].style.backgroundColor = 'blue'; // all the list item's background color are blue
-}
+// for(let i = 0; i<item.length; i++){
+//     item[i].style.backgroundColor = 'blue'; // all the list item's background color are blue
+// }
+
+
+//// 1.Make the 2nd item have green background color ////
+//// 2.Make the 3rd item invisible ////
+
+let secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor = 'green'
 
 
 
