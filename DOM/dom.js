@@ -53,23 +53,38 @@
 
 //QuerySelector //
 
-let header = document.querySelector('#main-header');
-header.style.borderBottom = 'solid 4px #ccc';
+// let header = document.querySelector('#main-header');
+// header.style.borderBottom = 'solid 4px #ccc';
 
-let input = document.querySelector('input');
-input.value = 'hello world';
+// let input = document.querySelector('input');
+// input.value = 'hello world';
 
-let submit = document.querySelector('input[type="submit"]');
-submit.value = 'SEND';
+// let submit = document.querySelector('input[type="submit"]');
+// submit.value = 'SEND';
 
-let item = document.querySelector('.list-group-item');
-item.style.color = 'red';
+// let item = document.querySelector('.list-group-item');
+// item.style.color = 'red';
 
-let lastItem = document.querySelector('.list-group-item:last-child');
-lastItem.style.color = 'red';
+// let lastItem = document.querySelector('.list-group-item:last-child');
+// lastItem.style.color = 'red';
 
-let secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.color = 'coral';
+// let secondItem = document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.color = 'coral';
+
+//QuerySelectorAll //
+
+let title = document.querySelectorAll('.title');
+
+console.log(title);
+title[0].textContent = 'Hello';
+
+let odd = document.querySelectorAll('li:nth-child(odd)');
+let even = document.querySelectorAll('li:nth-child(even)');
+
+for(let i = 0; i<odd.length; i++){
+    odd[i].style.backgroundColor = '#f4f4f4';
+    even[i].style.backgroundColor = '#ccc';
+}
 
 
 
