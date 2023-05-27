@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <style>
+      body {
+        background-image: url("https://thumbs.dreamstime.com/z/responsive-web-design-grid-flat-icons-vector-eps-39663898.jpg");
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      form {
+        background-color: wheat;
+        width: 50%;
+        height: 400px;
+        margin: auto;
+        border-radius: 5px;
+      }
+      label {
+        margin: 5px;
+      }
+      input {
+        border-radius: 3px;
+        width: 97%;
+        margin-left: 5px;
+        margin-top: 5px;
+        height: 22px;
+      }
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        margin-left: 40%;
+        padding-top: 40px;  
+        padding-bottom: 40px; 
+      }
+    </style> 
+  </head>
+  
+  <body>
+    <form onsubmit=getAcall(event)>
+      <h1>Book a call</h1>
+      <label>Name:</label><br />
+      <input type="text" name="username"/><br />
+      <label>Email:</label><br />
+      <input type="email" name = "email" required /><br />
+      <label>Phone:</label><br />
+      <input type="number" name = "phone"/><br />
+
+      <label>Time for Call</label><br />
+      <input type="date" name = "date" style="width: 48%;">
+      <input type="time" name = "time" style="width: 48%;margin-left: 0px;">
+      <input type="submit"  value="GET A CALL" style="width: 98.5%;height: 30px;color:aliceblue;font-weight: bold; margin-top: 20px; background-color: hsl(24, 98%, 47%);">
+    </form>
+  </body>
+  <script>
+    const getAcall = (event) =>{
+        event.preventDefault();
+        console.log(`Name: ${event.target.username.value}`);
+        console.log(`Email: ${event.target.email.value}`);
+        console.log(`Phone: ${event.target.phone.value}`);
+        console.log(`Date: ${event.target.date.value}`);
+        console.log(`Time: ${event.target.time.value}`)
+    }
+  </script>
+</html>
