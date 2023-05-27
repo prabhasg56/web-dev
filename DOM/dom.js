@@ -130,10 +130,14 @@
 //// Using QuerySelectorALL change the font color to green for 2nd item in the item list ////
 //// Choose all the odd elements and make their background green using QuerySelectorALL ////
 
-let secondItem = document.querySelectorAll('li')[1];
-secondItem.style.backgroundColor = 'green'
+// let secondItem = document.querySelectorAll('li')[1];
+// secondItem.style.backgroundColor = 'green'
 
+let odd = document.querySelectorAll('li:nth-child(odd)');
 
+for(let i = 0; i<odd.length; i++){
+    odd[i].style.backgroundColor = 'green'
+}
 
 
 
