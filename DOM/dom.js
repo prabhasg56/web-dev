@@ -40,14 +40,45 @@
 
 //getElementByTagName //
 
-let li = document.getElementsByTagName('li');
-console.log(li);
-console.log(items[1]);
-li[1].textContent = 'Hello';
-li[1].style.fontWeight = 'bold';
-li[1].style.backgroundColor = 'yellow' 
+// let li = document.getElementsByTagName('li');
+// console.log(li);
+// console.log(items[1]);
+// li[1].textContent = 'Hello';
+// li[1].style.fontWeight = 'bold';
+// li[1].style.backgroundColor = 'yellow' 
 
-for(let i = 0; i<li.length; i++){
-    li[i].style.backgroundColor = 'lightgray';
-}
+// for(let i = 0; i<li.length; i++){
+//     li[i].style.backgroundColor = 'lightgray';
+// }
+
+//QuerySelector //
+
+let header = document.querySelector('#main-header');
+header.style.borderBottom = 'solid 4px #ccc';
+
+let input = document.querySelector('input');
+input.value = 'hello world';
+
+let submit = document.querySelector('input[type="submit"]');
+submit.value = 'SEND';
+
+let item = document.querySelector('.list-group-item');
+item.style.color = 'red';
+
+let lastItem = document.querySelector('.list-group-item:last-child');
+lastItem.style.color = 'red';
+
+let secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.color = 'coral';
+
+
+
+
+
+
+
+
+
+
+
 
