@@ -86,15 +86,23 @@
 //     even[i].style.backgroundColor = '#ccc';
 // }
 
-// Make the 3 rd element in the list have green background color //
 
-let items = document.getElementsByClassName("list-group-item");
+//// Make the 3 rd element in the list have green background color ////
 
-items[2].style.backgroundColor = 'green';
 
-for(let i = 0; i<items.length; i++){
-    items[i].style.fontWeight = "bold"
-}
+// let items = document.getElementsByClassName("list-group-item");
+
+// items[2].style.backgroundColor = 'green';
+
+// //Make all the elements in the list have bold color font//
+
+// for(let i = 0; i<items.length; i++){
+//     items[i].style.fontWeight = "bold"
+// }
+
+
+//// Add a new li element without the same class Name ////
+//// And try editing it with getelementsbyclassname and then by getelementbytagname ////
 
 
 
