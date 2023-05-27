@@ -13,14 +13,26 @@
 
 // getElementById //
 
-console.log(document.getElementById('header-title'))
-let headerTitle = document.getElementById('header-title');
-let header = document.getElementById('main-header');
-console.log(headerTitle);
-headerTitle.textContent = 'Hello';
-headerTitle.innerText = 'goodby';
-console.log(headerTitle.textContent);//Item Lister 123
-console.log(headerTitle.innerText);//Item Lister 
-headerTitle.innerHTML = '<h3>Hello 2</h3>';
-header.style.borderBottom = 'solid 3px #000'
+// console.log(document.getElementById('header-title'))
+// let headerTitle = document.getElementById('header-title');
+// let header = document.getElementById('main-header');
+// console.log(headerTitle);
+// headerTitle.textContent = 'Hello';
+// headerTitle.innerText = 'goodby';
+// console.log(headerTitle.textContent);//Item Lister 123
+// console.log(headerTitle.innerText);//Item Lister 
+// headerTitle.innerHTML = '<h3>Hello 2</h3>';
+// header.style.borderBottom = 'solid 3px #000'
 
+// getElementByClass//
+
+let items = document.getElementsByClassName('list-group-item');
+console.log(items);
+console.log(items[1]);
+items[1].textContent = 'Hello';
+items[1].style.fontWeight = 'bold';
+items[1].style.backgroundColor = 'yellow' 
+
+for(let i = 0; i<items.length; i++){
+    items[i].style.backgroundColor = 'lightgray';
+}
