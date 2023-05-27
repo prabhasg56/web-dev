@@ -120,11 +120,18 @@
 //// 1.Make the 2nd item have green background color ////
 //// 2.Make the 3rd item invisible ////
 
-let secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.backgroundColor = 'green';
+// let secondItem = document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.backgroundColor = 'green';
 
-let thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.visibility = 'hidden'
+// let thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+// thirdItem.style.visibility = 'hidden'
+
+
+//// Using QuerySelectorALL change the font color to green for 2nd item in the item list ////
+//// Choose all the odd elements and make their background green using QuerySelectorALL ////
+
+let secondItem = document.querySelectorAll('li')[1];
+secondItem.style.backgroundColor = 'green'
 
 
 
