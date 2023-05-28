@@ -43,7 +43,17 @@ let itemList = document.querySelector('#items');
 
 //// firstelementchild ////
 
-console.log(itemList.firstElementChild)
+// console.log(itemList.firstElementChild)
 
-itemList.firstElementChild.textContent = 'Hello';
-itemList.firstElementChild.style.color = 'red'
+// itemList.firstElementChild.textContent = 'Hello';
+// itemList.firstElementChild.style.color = 'red'
+
+
+//// firstchild ////
+
+console.log(itemList.firstChild)
+
+itemList.firstChild.textContent = 'Hello';
+itemList.firstChild.style.backgroundColor = 'red'
+
+
