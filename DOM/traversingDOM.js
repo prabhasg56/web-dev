@@ -13,12 +13,21 @@
 // createtesxtnode
 // appendchild
 
-//// parentElement ////
+
 
 let itemList = document.querySelector('#items');
 
-console.log(itemList.parentElement);
+//// parentElement ////
 
-itemList.parentElement.style.backgroundColor = 'lightgray';
+// console.log(itemList.parentElement);
 
-console.log(itemList.parentElement.parentElement.parentElement)
+// itemList.parentElement.style.backgroundColor = 'lightgray';
+
+// console.log(itemList.parentElement.parentElement.parentElement)
+
+//// lastelementchild ////
+
+console.log(itemList.lastElementChild)
+
+itemList.lastElementChild.textContent = 'hello';
+itemList.lastElementChild.style.color = 'red'
