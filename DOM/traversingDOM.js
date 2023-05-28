@@ -27,7 +27,15 @@ let itemList = document.querySelector('#items');
 
 //// lastelementchild ////
 
-console.log(itemList.lastElementChild)
+// console.log(itemList.lastElementChild)
+
+// itemList.lastElementChild.textContent = 'hello';
+// itemList.lastElementChild.style.color = 'red'
+
+
+// lastchild //
+
+console.log(itemList.lastChild)
 
 itemList.lastElementChild.textContent = 'hello';
 itemList.lastElementChild.style.color = 'red'
