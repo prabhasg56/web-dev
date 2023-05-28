@@ -66,8 +66,38 @@ let itemList = document.querySelector('#items');
 
 ////prevElementSibling////
 
-console.log(itemList.previousSibling);
-console.log(itemList.previousElementSibling);
+// console.log(itemList.previousSibling);
+// console.log(itemList.previousElementSibling);
+
+
+//// createElement ////
+
+// create div
+
+let newDiv = document.createElement('div');
+
+//add id
+newDiv.id = 'hello';
+
+//add class
+
+newDiv.className = 'hello1';
+
+//add attribute
+newDiv.setAttribute('title','Hello div');
+
+//create text node 
+let newDivText = document.createTextNode('Hello world');
+
+// Add text to div
+newDiv.appendChild(newDivText);
+
+let container = document.querySelector('header .container');
+let h1 = document.querySelector('header h1');
+
+newDiv.style.fontSize = '30px';
+container.insertBefore(newDiv, h1);
+console.log(newDiv);
 
 
 
