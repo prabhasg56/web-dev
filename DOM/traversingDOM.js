@@ -45,5 +45,5 @@ let itemList = document.querySelector('#items');
 
 console.log(itemList.firstElementChild)
 
-itemList.firstElementChild.textContent = 'hello';
+itemList.firstElementChild.textContent = 'Hello';
 itemList.firstElementChild.style.color = 'red'
