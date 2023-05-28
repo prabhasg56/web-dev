@@ -58,10 +58,16 @@ let itemList = document.querySelector('#items');
 
 ////nextsibling////
 
-console.log(itemList.nextSibling);
+// console.log(itemList.nextSibling);
 
 ////nextElementSibling////
 
-console.log(itemList.nextElementSibling);
+// console.log(itemList.nextElementSibling);
+
+////prevElementSibling////
+
+console.log(itemList.previousSibling);
+console.log(itemList.previousElementSibling);
+
 
 
