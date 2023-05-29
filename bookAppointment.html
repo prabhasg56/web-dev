@@ -27,38 +27,33 @@
         <input type="email" name="email" aria-describedby="emailHelp" />
         Phone Number:
         <input type="number" name="phone" aria-describedby="emailHelp" />
-        <button
-          type="submit"
-          style="background-color: green"
-          id = 'submit'
-        >
+        <button type="submit" style="background-color: green" id="submit">
           Submit
         </button>
       </form>
-      <ul id="items" class="list-group">
-        
-      </ul>
-      <p id = 'f1'> </p>
+      <ul id="items"></ul>
     </div>
     <script>
-        let listItem = [];
-        // let itemList = document.getElementById('items')
+      let listItem = {};
+      let itemList = document.getElementById("items");
 
-        function getAppointment(e) {
-            e.preventDefault();
+      function getAppointment(e) {
+        e.preventDefault();
+        let name = e.target.username.value;
+        let email = e.target.email.value;
+        let mobile = e.target.phone.value;
 
-            // let li = document.createElement('li');
-            // li.appendChild(` ${e.target.username.value} - ${e.target.email.value} - ${e.target.phone.value}<br/>`)
-            
-            // itemList.appendChild(li);
+        let li = document.createElement("li");
+        li.textContent = ` ${name} - ${email} - ${mobile}`;
+        itemList.appendChild(li);
 
-            listItem.push(` ${e.target.username.value} - ${e.target.email.value} - ${e.target.phone.value}<br/>`)
-            //for(let lis of itemList)
-            // console.log(listItem)
-            document.getElementById('f1').innerHTML = listItem;
-            
-            localStorage.setItem(`${e.target.email.value}`, listItem)
-        }
+        listItem = {
+          name,
+          email,
+          mobile,
+        };
+        localStorage.setItem(email, JSON.stringify(listItem));
+      }
     </script>
   </body>
 </html>
