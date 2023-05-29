@@ -24,19 +24,16 @@
         background-attachment: fixed;
         background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-image: url('https://thumbs.dreamstime.com/z/responsive-web-design-grid-flat-icons-vector-eps-39663898.jpg');
+        background-image: url("https://thumbs.dreamstime.com/z/responsive-web-design-grid-flat-icons-vector-eps-39663898.jpg");
       }
     </style>
   </head>
   <body>
-    <div
-    >
+    <div>
       <div class="mx-auto col-10 col-md-8 col-lg-6">
         <form class="form-control" onsubmit="getAcall(event)">
           <div class="mb-3">
-            <h2 class="mx-auto col-5 col-md-4 col-lg-3">
-              Book a call
-            </h2>
+            <h2 class="mx-auto col-5 col-md-4 col-lg-3">Book a call</h2>
             <label for="exampleInputEmail1" class="form-label">Name:</label>
             <input
               type="text"
@@ -95,13 +92,23 @@
     </div>
   </body>
   <script>
-    const getAcall = (event) =>{
-        event.preventDefault();
-        localStorage.setItem('Name' ,event.target.username.value);
-        localStorage.setItem('Email' ,event.target.email.value);
-        localStorage.setItem('Phone' ,event.target.phone.value);
-        localStorage.setItem('Date' ,event.target.date.value);
-        localStorage.setItem('Time' ,event.target.time.value);
-    }
+    const getAcall = (event) => {
+      event.preventDefault();
+      // localStorage.setItem("Name", event.target.username.value);
+      // localStorage.setItem("Email", event.target.email.value);
+      // localStorage.setItem("Phone", event.target.phone.value);
+      // localStorage.setItem("Date", event.target.date.value);
+      // localStorage.setItem("Time", event.target.time.value);
+
+      let stdObj = {
+        'Name': event.target.username.value,
+        'Email': event.target.email.value,
+        'Phone': event.target.phone.value,
+        'Date': event.target.date.value,
+        'Time': event.target.time.value
+      };
+
+      localStorage.setItem('student details',JSON.stringify(stdObj));
+    };
   </script>
 </html>
