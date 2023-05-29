@@ -92,6 +92,7 @@
     </div>
   </body>
   <script>
+    let detail=[];
     const getAcall = (event) => {
       event.preventDefault();
       // localStorage.setItem("Name", event.target.username.value);
@@ -99,7 +100,6 @@
       // localStorage.setItem("Phone", event.target.phone.value);
       // localStorage.setItem("Date", event.target.date.value);
       // localStorage.setItem("Time", event.target.time.value);
-
       let stdObj = {
         'Name': event.target.username.value,
         'Email': event.target.email.value,
@@ -107,8 +107,9 @@
         'Date': event.target.date.value,
         'Time': event.target.time.value
       };
-
-      localStorage.setItem('student details',JSON.stringify(stdObj));
+      detail.push(stdObj);
+      localStorage.setItem('key',JSON.stringify(detail));
     };
+    
   </script>
 </html>
