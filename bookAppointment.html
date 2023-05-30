@@ -33,6 +33,7 @@
       </form>
       <ul id="items"></ul>
     </div>
+    
     <script>
       let listItem = {};
       let itemList = document.getElementById("items");
@@ -43,16 +44,45 @@
         let email = e.target.email.value;
         let mobile = e.target.phone.value;
 
-        let li = document.createElement("li");
-        li.textContent = ` ${name} - ${email} - ${mobile}`;
-        itemList.appendChild(li);
+        // let li = document.createElement("li");
+        // li.id = 'item'
+        // li.textContent = ` ${name} - ${email} - ${mobile}`;
+        // itemList.appendChild(li);
+
+        const childHtml = `<li id= ${email} > ${name} - ${email} - ${mobile} 
+          <button onclick = removeItemFromLocalStorage('${email}')> DELETE </button>
+          
+          </li>`;
+        itemList.innerHTML +=  childHtml;
+
+        //add delete button
+        // let delBtn = document.createElement("button");
+        // delBtn.className = "delete";
+        // delBtn.appendChild(document.createTextNode("DELETE"));
+        // li.appendChild(delBtn);
 
         listItem = {
           name,
           email,
           mobile,
         };
+
         localStorage.setItem(email, JSON.stringify(listItem));
+      }
+
+      function removeItemFromLocalStorage(email) {
+        localStorage.removeItem(email);
+
+        removeItemFromScreen(email);
+      }
+
+      function removeItemFromScreen(emailId) {
+            const parentNode = itemList;
+            const childNodeTobeDeleted = document.getElementById(emailId);
+           
+            if(childNodeTobeDeleted){
+              parentNode.removeChild(childNodeTobeDeleted);
+            }
       }
     </script>
   </body>
