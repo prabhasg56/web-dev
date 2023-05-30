@@ -20,54 +20,75 @@
   </head>
   <body>
     <div class="mx-auto col-10 col-md-10">
-      <form class="form-control" name="myForm" onsubmit="getAppointment(event)">
+      <form class="form-control" name="myForm" onsubmit="showOnLocalStorage(event)">
         Name:
-        <input type="text" name="username" aria-describedby="emailHelp" />
+        <input
+          type="text"
+          name="username"
+          ,
+          id="name"
+          aria-describedby="emailHelp"
+        />
         Email:
-        <input type="email" name="email" aria-describedby="emailHelp" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          aria-describedby="emailHelp"
+        />
         Phone Number:
-        <input type="number" name="phone" aria-describedby="emailHelp" />
+        <input
+          type="number"
+          name="phone"
+          id="phone"
+          aria-describedby="emailHelp"
+        />
         <button type="submit" style="background-color: green" id="submit">
           Submit
         </button>
       </form>
       <ul id="items"></ul>
     </div>
-    
-    <script>
-      let listItem = {};
-      let itemList = document.getElementById("items");
 
-      function getAppointment(e) {
+    <script>
+
+      function showOnLocalStorage(e){
         e.preventDefault();
         let name = e.target.username.value;
         let email = e.target.email.value;
         let mobile = e.target.phone.value;
 
-        // let li = document.createElement("li");
-        // li.id = 'item'
-        // li.textContent = ` ${name} - ${email} - ${mobile}`;
-        // itemList.appendChild(li);
-
-        const childHtml = `<li id= ${email} > ${name} - ${email} - ${mobile} 
-          <button onclick = removeItemFromLocalStorage('${email}')> DELETE </button>
-          
-          </li>`;
-        itemList.innerHTML +=  childHtml;
-
-        //add delete button
-        // let delBtn = document.createElement("button");
-        // delBtn.className = "delete";
-        // delBtn.appendChild(document.createTextNode("DELETE"));
-        // li.appendChild(delBtn);
-
-        listItem = {
+       let user = {
           name,
           email,
           mobile,
         };
 
-        localStorage.setItem(email, JSON.stringify(listItem));
+        localStorage.setItem(email, JSON.stringify(user));
+        showOnBrowserScreen(user);
+      }
+
+      function showOnBrowserScreen(user){
+        document.getElementById("name").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("phone").value = '';
+
+        let itemList = document.getElementById("items");
+
+        const childHtml = `<li id= ${user.email} > ${user.name} - ${user.email} - ${user.mobile} 
+          <button onclick = removeItemFromLocalStorage('${user.email}')> DELETE </button>
+          <button onclick = editItem('${user.name}','${user.email}','${user.mobile}')> EDIT </button>
+          
+          </li>`;
+        itemList.innerHTML += childHtml;
+      }
+
+      function editItem(name, email, phone) {
+        document.getElementById("name").value = name;
+        document.getElementById("email").value = email;
+        document.getElementById("phone").value = phone;
+
+        removeItemFromLocalStorage(email);
       }
 
       function removeItemFromLocalStorage(email) {
@@ -77,12 +98,12 @@
       }
 
       function removeItemFromScreen(emailId) {
-            const parentNode = itemList;
-            const childNodeTobeDeleted = document.getElementById(emailId);
-           
-            if(childNodeTobeDeleted){
-              parentNode.removeChild(childNodeTobeDeleted);
-            }
+        const parentNode = document.getElementById('items');
+        const childNodeTobeDeleted = document.getElementById(emailId);
+
+        if (childNodeTobeDeleted) {
+          parentNode.removeChild(childNodeTobeDeleted);
+        }
       }
     </script>
   </body>
