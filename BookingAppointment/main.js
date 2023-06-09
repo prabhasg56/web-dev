@@ -72,4 +72,12 @@ function removeItemFromScreen(id) {
   if (childNodeTobeDeleted) {
     parentNode.removeChild(childNodeTobeDeleted);
   }
+
+  removeItemFromRemote(id);
+}
+
+function removeItemFromRemote(id){
+  axios.delete(`https://crudcrud.com/api/6f1ea414d8884c88a5adbf2dfff66554/appointment/${id}`)
+    .then(() => alert('Successfully Deleted'))
+    .catch(err => alert(err));
 }
