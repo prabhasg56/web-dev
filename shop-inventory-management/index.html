@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop inventory management</title>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="main" class="card card-body">
+            <form class="form-inline mb-4" id="addForm">
+                <div style="display: flex; flex-direction: column;">
+                    <label class=" mr-1">Item Name </label>
+                    <input type="text" class="form-control mr-2" id = 'item' />
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <label class=" mr-1">Description</label>
+                    <input type="text" class="form-control mr-2" id = 'desc' />
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <label class=" mr-1">Price </label>
+                    <input type="text" class="form-control mr-2" id = 'price' />
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <label class=" mr-1">Quantity</label>
+                    <input type="text" class="form-control mr-2" id = 'quantity' />
+                </div>
+               
+                <input type="submit" style="margin-top: 22px; background-color: green; border-radius: 2px;" value="Add Item" />
+
+            </form>
+            <h2 class="title">Stock Items</h2>
+            <ul id="items" class="list-group">
+                    
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

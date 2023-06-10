@@ -46,7 +46,7 @@ function showOnBrowserScreen(user) {
 
     const childHtml = `<li id= ${user._id} > ${user.name} - ${user.email} - ${user.mobile} 
         <button onclick = removeItemFromLocalStorage('${user._id}')> DELETE </button>
-        <button onclick = editItem('${user._id}','${user.name}','${user.email}','${user.mobile}')> EDIT </button>
+        <button onclick = editItem('${user._id}','${user.name}','${user.email}','${user.mobile}')>EDIT</button>
         </li>`;
     itemList.innerHTML += childHtml;
 }
