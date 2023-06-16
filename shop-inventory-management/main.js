@@ -2,7 +2,7 @@ let form = document.getElementById("addForm");
 
 form.addEventListener("submit", itemSaveOnRemote);
 
-function itemSaveOnRemote(e) {
+async function itemSaveOnRemote(e) {
   e.preventDefault();
 
   let itemName = document.getElementById("item").value,
@@ -17,18 +17,21 @@ function itemSaveOnRemote(e) {
     quantity,
   };
 
-  axios
+  try{
+    let res = await axios
     .post(
-      "https://crudcrud.com/api/bd6003dbc43f444c81cf1a59ba041bf2/storeItems",
+      "https://crudcrud.com/api/69703be6e591467d87c81c138216a538/storeItems",
       itemObj
     )
-    .then((response) => showOnBrowserScreen(response.data))
-    .catch((err) => alert("Something went wrong"));
+    showOnBrowserScreen(res.data);
+  }catch (err){
+    console.log(err);
+  }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
   axios
-    .get("https://crudcrud.com/api/bd6003dbc43f444c81cf1a59ba041bf2/storeItems")
+    .get("https://crudcrud.com/api/69703be6e591467d87c81c138216a538/storeItems")
     .then((responseAll) => {
       for (let i = 0; i < responseAll.data.length; i++) {
         showOnBrowserScreen(responseAll.data[i]);
@@ -64,7 +67,7 @@ function showOnBrowserScreen(itemObj) {
 function updateItem(itemObj, noOfBuyItems) {
   axios
     .put(
-      `https://crudcrud.com/api/bd6003dbc43f444c81cf1a59ba041bf2/storeItems/${itemObj._id}`,
+      `https://crudcrud.com/api/69703be6e591467d87c81c138216a538/storeItems/${itemObj._id}`,
       {
         itemName: itemObj.itemName,
         description: itemObj.description,

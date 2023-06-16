@@ -5,12 +5,12 @@ const API = "https://jsonplaceholder.typicode.com/todos";
 let storeData;
 
 //Fetching data from API
-async function getData() {
+async function getData(callback) {
 
     try{
         let res = await fetch(API);
         let fetchedata = await res.json();
-        return fetchedata;
+        callback(fetchedata)
     }
     catch(err) {
         console.log(err);
@@ -20,18 +20,19 @@ async function getData() {
 
 //Display function
  function display(data) {
+    console.log(data)
    // container.innerHTML = "";
-    for(let index = 0; index < data.length; index++) {
-        console.log(data[index]);
-    }
+    // for(let index = 0; index < data.length; index++) {
+    //     console.log(data[index]);
+    // }
 }
 
 
-getData().then((res) => {
-   setTimeout(() => {
-    storeData = res;
-   }, 10000);
-});
+// getData().then((res) => {
+//    setTimeout(() => {
+//     storeData = res;
+//    }, 10000);
+// });
 
-getData().then(()=>display())
+getData(()=>display())
 // display(storeData);
